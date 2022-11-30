@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta http-equiv="Content-Type"
-          content="text/html; charset=ISO-8859-1">
-    <title>User Registration</title>
-    <style>
+	<meta content="text/html; charset=ISO-8859-1"
+	      http-equiv="Content-Type">
+	<title>User Registration</title>
+	<script defer src="login.js"></script>
+	<style>
         .myDiv {
             border: 5px outset red;
             background-color: lightblue;
@@ -19,21 +20,18 @@
         .parent {
             display: flex;
         }
-    </style>
+	</style>
 </head>
 <body>
 
 <a href="Index.html">Home</a>
 <div class="parent">
-    <div class="myDiv">
-<!-- < method="POST" modelAttribute="user"> -->
-    <label path="username">Username: </label>
-    <input path="username" type="text"/>
-    <label path="password">Password: </label>
-    <input path="password" type="password" />
-    <input type="submit" value="Submit" />
-
-    </div>
+	<div class="myDiv">
+		<!-- < method="POST" modelAttribute="user"> -->
+		<label>Username: <input type="text"/></label>
+		<label>Password: <input type="password"/></label>
+		<button onclick="login()">Log In</button>
+	</div>
 </div>
 </body>
 </html>
