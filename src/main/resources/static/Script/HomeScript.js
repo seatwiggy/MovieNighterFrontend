@@ -20,15 +20,33 @@ function addMovieToList(){
 
 }
 
-function displayMovies(){
-    getMoviesFromDatabase();
+function displayMovies(movies){
+    let movieList = document.getElementById("movieList");
+    movieList.innerHTML = "";
+    for (let movie of movies) {
+        let movie_html = "<p> Name: " + movie.title + "<br/> Movie Length: " + movie.movieLength + "</p>";
+        movieList.innerHTML += movie_html;
+    }
 }
 
 function getMoviesFromDatabase(){
+    let xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function (){
+        if(this.readyState == XMLHttpRequest.DONE && this.status ==200){
+            let movies = JSON.parse(this.responseText);
+            displayMovies(getMoviesFromAPI(movies));
+        }
+    }
+    xmlHttp.open("GET","http://localhost:8081/character/",true);
+    xmlHttp.send();
 
 }
 
 function getMovieIdFromAPI(){
+
+}
+
+function getMovieFromAPI(){
 
 }
 
