@@ -3,10 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <title>Account</title>
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function() {
+            $("#visible").click(function() {
+                $('#invisible').toggleClass("show");
+            });
+        });
+
+    </script>
+
+    <style>
+        h4 {font-family: "Comic Sans MS";}
+
+        .myDiv {
+            border: 5px outset red;
+            background-color: lightblue;
+            text-align: center;
+            margin: auto;
+            width: auto;
+            padding: 30px;
+            vertical-align: auto;
+            horiz-align: center;
+        }
+
+        .parent {display: flex;}
+
+        .hide{
+            display:none;
+            border: 5px outset red;
+            background-color: lightblue;
+            text-align: center;
+            margin: auto;
+            width: auto;
+            padding: 30px;
+            vertical-align: auto;
+            horiz-align: center;
+        }
+
+        .show{display:block;}
+
+    </style>
+
 </head>
 <body>
 
 <a href="Index.html">Home</a>
+
+<div class="parent">
+    <div class="myDiv">
+    <h3>Username: </h3>
+        <input path="username2" type="text"/>
+
+        <h3>Groups: </h3>
+
+        <br />
+        <input id="visible" type="submit" value="Edit" />
+
+    </div>
+
+<div class="parent">
+        <div id="invisible" class="hide">
+            <h4>Change Username:</h4>
+            <input path="username" type="text"/>
+            <input type="button" value="Submit" />
+
+            <h4>Change Password:</h4>
+            <input path="password" type="text"/>
+            <input type="button" value="Submit" />
+
+            <h4>Change Contact Info:</h4>
+            <input path="cantactInfo" type="text"/>
+            <input type="button" value="Submit" />
+        </div>
+
+</div>
+
+
+</div>
 
 </body>
 </html>
