@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Login</title>
+	<meta content="text/html; charset=ISO-8859-1"
+	      http-equiv="Content-Type">
+	<title>User Registration</title>
+	<script defer src="login.js"></script>
+	<style>
+        .myDiv {
+            border: 5px outset red;
+            background-color: lightblue;
+            text-align: center;
+            margin: auto;
+            width: auto;
+            padding: 30px;
+            vertical-align: auto;
+            horiz-align: center;
+        }
+
+        .parent {
+            display: flex;
+        }
+	</style>
 </head>
 <body>
-//UserName
-//box
-//password
-//box
-//Create/Sign in
+
+<a href="Index.html">Home</a>
+<div class="parent">
+	<div class="myDiv">
+		<!-- < method="POST" modelAttribute="user"> -->
+		<label>Username: <input type="text"/></label>
+		<label>Password: <input type="password"/></label>
+		<button onclick="login()">Log In</button>
+	</div>
+</div>
 </body>
 </html>

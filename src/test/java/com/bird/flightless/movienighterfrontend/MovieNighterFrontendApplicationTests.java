@@ -9,5 +9,4 @@ class MovieNighterFrontendApplicationTests {
 	@Test
 	void contextLoads() {
 	}
-
 }
