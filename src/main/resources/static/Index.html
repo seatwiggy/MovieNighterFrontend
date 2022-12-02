@@ -3,6 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Home Page</title>
+
+	<script defer src="Script/HomeScript.js"></script>
+
 	<style>
         h4 {
             font-family: "Comic Sans MS", sans-serif;
@@ -53,10 +56,16 @@
 </head>
 <body>
 
+<!--put links for the other four pages-->
+<!--Put three (maybe) boxes for upcoming events, Voting for next, and previous movies-->
+
 <a href="LoginPage.html">Login</a>
 <a href="AccountPage.html">Account</a>
+<a href="AboutPage.html">About</a>
+<!--<a href="CalendarPage.html">Calender</a>-->
+<br/>
+<br/>
 
-<!--i love html-->
 <div class="parent">
 	<div class="myDiv">
 		<h4>Upcoming Event</h4>
@@ -64,7 +73,13 @@
 
 	<div class="myDiv2">
 		<h4>Vote For Next Movie Night</h4>
+		<p id="movieList"></p>
 	</div>
+	<label>Name</label>
+	<input id="movieName" type="text"/>
+	<br/>
+	<button onclick="voteForMovie();">Vote</button>
+	<button onclick="addMovieToList();">Add To List</button>
 
 	<div class="myDiv3">
 		<h4>Previous Movies</h4>
