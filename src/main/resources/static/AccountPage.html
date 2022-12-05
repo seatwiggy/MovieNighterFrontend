@@ -14,37 +14,7 @@
 
     </script>
 
-    <style>
-        h4 {font-family: "Comic Sans MS";}
-
-        .myDiv {
-            border: 5px outset red;
-            background-color: lightblue;
-            text-align: center;
-            margin: auto;
-            width: auto;
-            padding: 30px;
-            vertical-align: auto;
-            horiz-align: center;
-        }
-
-        .parent {display: flex;}
-
-        .hide{
-            display:none;
-            border: 5px outset red;
-            background-color: lightblue;
-            text-align: center;
-            margin: auto;
-            width: auto;
-            padding: 30px;
-            vertical-align: auto;
-            horiz-align: center;
-        }
-
-        .show{display:block;}
-
-    </style>
+    <link href="Styles.css" rel="stylesheet" />
 
 </head>
 <body>
@@ -52,11 +22,12 @@
 <a href="Index.html">Home</a>
 
 <div class="parent">
-    <div class="myDiv">
+    <div class="myDiv4">
     <h3>Username: </h3>
         <input path="username2" type="text"/>
 
         <h3>Groups: </h3>
+        <input path="username2" type="text"/>
 
         <br />
         <input id="visible" type="submit" value="Edit" />
@@ -76,6 +47,10 @@
             <h4>Change Contact Info:</h4>
             <input path="cantactInfo" type="text"/>
             <input type="button" value="Submit" />
+
+            <h4>Change Group:</h4>
+            <input path="group" type="text"/>
+            <input type="" value="Groups" />
         </div>
 
 </div>
