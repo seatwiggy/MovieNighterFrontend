@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <title>Home Page</title>
 <link href="Styles.css" rel="stylesheet" />
@@ -10,22 +11,29 @@
 
 <a href="LoginPage.html">Login</a>
 <a href="AccountPage.html">Account</a>
-    <br/>
-    <br/>
+<a href="AboutPage.html">About</a>
+<!--<a href="CalendarPage.html">Calender</a>-->
+<br/>
+<br/>
 
-<!--i love html-->
 <div class="parent">
-<div class="myDiv">
-<h4>Upcoming Event</h4>
-</div>
+	<div class="myDiv">
+		<h4>Upcoming Event</h4>
+	</div>
 
-<div class="myDiv2">
-   <h4>Vote For Next Movie Night</h4>
-</div>
+	<div class="myDiv2">
+		<h4>Vote For Next Movie Night</h4>
+		<p id="movieList"></p>
+	</div>
+	<label>Name</label>
+	<input id="movieName" type="text"/>
+	<br/>
+	<button onclick="voteForMovie();">Vote</button>
+	<button onclick="addMovieToList();">Add To List</button>
 
-<div class="myDiv3">
-    <h4>Previous Movies</h4>
-</div>
+	<div class="myDiv3">
+		<h4>Previous Movies</h4>
+	</div>
 </div>
 </body>
 </html>

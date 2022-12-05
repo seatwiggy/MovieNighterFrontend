@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+<script defer src="Script/RegisterScript.js"></script>
+</head>
+<body>
+
+
+<label>User Name</label>
+<input type ="text" id="username"/>
+<br/>
+<label>Password</label>
+<input type ="password" id="password"/>
+<br/>
+<label>Password Conformation</label>
+<input type ="password" id="password_check"/>
+<br/>
+<label>Contact Info</label>
+<textarea row = "8" col="20" id ="contact_info"></textarea>
+<br/>
+<label>Contact Info type</label>
+<p>EX: Email, Discord, Instagram, Phone Number </p>
+<textarea row = "8" col="20" id ="contact_info_type"></textarea>
+<br/>
+<button onclick="createUser();">Make Account</button>
+<p id="response"></p>
+
+</body>
+</html>
