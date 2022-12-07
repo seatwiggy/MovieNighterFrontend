@@ -4,10 +4,17 @@
     <meta charset="UTF-8">
     <title>Register</title>
 <script defer src="Script/RegisterScript.js"></script>
+    <link href="Styles.css" rel="stylesheet" />
+
 </head>
 <body>
 
+<a href="index.html">Home</a>
 
+<br/>
+<br/>
+
+<div class="myDiv">
 <label>User Name</label>
 <input type ="text" id="username"/>
 <br/>
@@ -20,12 +27,14 @@
 <label>Contact Info</label>
 <textarea row = "8" col="20" id ="contact_info"></textarea>
 <br/>
+    <br/>
 <label>Contact Info type</label>
 <p>EX: Email, Discord, Instagram, Phone Number </p>
 <textarea row = "8" col="20" id ="contact_info_type"></textarea>
 <br/>
 <button onclick="createUser();">Make Account</button>
 <p id="response"></p>
+</div>
 
 </body>
 </html>

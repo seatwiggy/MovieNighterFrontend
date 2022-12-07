@@ -4,7 +4,18 @@
     <meta charset="UTF-8">
     <title>Account</title>
 
-    <script defer src="Script/AccountScript.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script>
+        $(function() {
+            $("#visible").click(function() {
+                $('#invisible').toggleClass("show");
+            });
+        });
+
+    </script>
+
+    <link href="Styles.css" rel="stylesheet" />
+    <script defer src="./Script/AccountScript.js"></script>
 
 </head>
 <body>
@@ -12,11 +23,12 @@
 <a href="Index.html">Home</a>
 
 <div class="parent">
-    <div class="myDiv">
+    <div class="myDiv4">
     <h3>Username: </h3>
-        <input path="username2" type="text"/>
+       <p></p>
 
         <h3>Groups: </h3>
+        <p></p>
 
         <br />
         <input id="visible" type="submit" value="Edit" />
@@ -26,22 +38,32 @@
 <div class="parent">
         <div id="invisible" class="hide">
             <h4>Change Username:</h4>
-            <input path="username" type="text"/>
+            <input id="username" type="text"/>
             <input type="button" value="Submit" />
 
             <h4>Change Password:</h4>
-            <input path="password" type="text"/>
+            <input id="password" type="text"/>
             <input type="button" value="Submit" />
 
             <h4>Change Contact Info:</h4>
-            <input path="cantactInfo" type="text"/>
+            <input id="contactInfo" type="text"/>
             <input type="button" value="Submit" />
-        </div>
 
-</div>
+            <br/>
+            <br/>
+
+            <!--    <label for="group">Choose a Group:</label>
+
+                <select name="groups" id="group">
+                    <option value="placeHolder">Place Holder</option>
+                </select> -->
+
+            </div>
+
+    </div>
 
 
-</div>
+    </div>
 
-</body>
-</html>
+    </body>
+    </html>
