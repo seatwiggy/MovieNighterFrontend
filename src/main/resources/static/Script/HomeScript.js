@@ -1,4 +1,5 @@
 const apiKey = "";
+const backendUrl = "http://20.172.234.66:8081";
 let groupID = localStorage.getItem("groupID");
 
 function voteForMovie() {
@@ -6,7 +7,8 @@ function voteForMovie() {
 
 	let xmlHttp = new XMLHttpRequest();
 
-	xmlHttp.open("POST", "http://localhost:8081/groups/vote/" + groupID + "/" + movieId);
+	xmlHttp.open("POST", `${backendUrl}/groups/vote/${groupID}/${movieId}`);
+	xmlHttp.setRequestHeader("Content-Type", "application/json");
 	xmlHttp.setRequestHeader("Authorization", localStorage.getItem("auth"));
 	xmlHttp.onreadystatechange = async function () {
 		console.log("ready state: ", this.status);
@@ -49,12 +51,12 @@ async function displayMovies() {
 function getMoviesFromDatabase() {
 		let xmlHttp = new XMLHttpRequest();
 		xmlHttp.onreadystatechange = function () {
-			if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
+			if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
 				let movies = JSON.parse(this.responseText);
 				return movies;
 			}
 		}
-		xmlHttp.open("GET", "http://localhost:8081/movies/"+groupID, true);
+		xmlHttp.open("GET", `${backendUrl}/character/`, true);
 		xmlHttp.send();
 	}
 
@@ -100,7 +102,3 @@ async function displaySearchedMovies(){
 	}
 	movieList.innerHTML += <p/>
 }
-
-
-
-
