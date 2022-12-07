@@ -31,7 +31,6 @@ function displayMovies(movies) {
 	}
 }
 
-function getMoviesFromDatabase() {
 	function getMoviesFromDatabase() {
 		let xmlHttp = new XMLHttpRequest();
 		xmlHttp.onreadystatechange = function () {
@@ -67,4 +66,4 @@ function getMoviesFromDatabase() {
 				return data;
 			})
 	}
-}
+
