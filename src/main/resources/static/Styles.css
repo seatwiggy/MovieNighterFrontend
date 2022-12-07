@@ -57,7 +57,7 @@ h4 {
 
 .hide{
     display:none;
-    border: 5px outset red;
+    border: 5px outset orange;
     background-color: lightblue;
     text-align: center;
     margin: auto;
