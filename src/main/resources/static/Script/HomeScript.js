@@ -57,7 +57,7 @@ function getMoviesFromDatabase() {
 				return movies;
 			}
 		}
-		xmlHttp.open("GET", `${backendUrl}/character/`, true);
+		xmlHttp.open("GET", `${backendUrl}/${localStorage.getItem("groupId")}/`, true);
 		xmlHttp.send();
 	}
 

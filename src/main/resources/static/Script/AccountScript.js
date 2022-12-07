@@ -150,12 +150,29 @@ function displayGroups(){
 		group_list.innerHTML +=group_html;
 	}
 }
+
 function displayUserName(){
 	let name = localStorage.getItem("authHeader");
 	name = atob(name);
 	name = name.split(":");
 	name = name.slice(5);
 	document.getElementById("username").innerHTML = name;
+}
+
+function createGroup(){
+	let name = document.getElementById("group_name").value;
+	let userId = getUserID(document.getElementById("username").value);
+	const xmlHttp = new XMLHttpRequest();
+	xmlHttp.open("POST", `${backendUrl}/group/${name}/${userId}`);
+
+	xmlHttp.onreadystatechange = function () {
+		console.log("ready state: ", this.status);
+		if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+			displayGroups();
+
+		}
+	}
+	xmlHttp.send();
 }
 
 window.onload = function (){
