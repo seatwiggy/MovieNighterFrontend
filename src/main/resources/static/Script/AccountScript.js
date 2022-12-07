@@ -20,7 +20,7 @@ function updateUser(){
         document.getElementById("response").innerHTML = "This username is already in use";
     }
     const xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("PUT","http://localhost:8082/users/"+id);
+    xmlHttp.open("PUT","http://localhost:8081/users/"+id);
     xmlHttp.setRequestHeader("Content-Type","application/json");
     xmlHttp.onreadystatechange = function (){
         console.log("ready state: ", this.status);
@@ -43,6 +43,6 @@ function getUserID(username){
             }
         }
     }
-    xmlHttp.open("GET","http://localhost:8082/user/"+username,true);
+    xmlHttp.open("GET","http://localhost:8081/user/"+username,true);
     xmlHttp.send();
 }
