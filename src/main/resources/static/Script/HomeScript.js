@@ -4,7 +4,6 @@ let groupID = localStorage.getItem("groupID");
 
 function voteForMovie() {
 	let movieId = getMovieIdFromAPI(document.getElementById("movieName").value);
-
 	let xmlHttp = new XMLHttpRequest();
 
 	xmlHttp.open("POST", `${backendUrl}/groups/vote/${groupID}/${movieId}`);
@@ -26,7 +25,7 @@ function addMovieToList() {
     let movie = getMovieIdFromAPI(document.getElementById(movieName).value);
     //ajax
     let xmlHttp = new XMLHttpRequest();
-    xmlHttp.open("POST","http://localhost:8081/groups/addMovie" + groupID + "/" + movie);
+    xmlHttp.open("POST",`${backendUrl}/groups/addMovie/${groupID}/${movie}`);
     xmlHttp.setRequestHeader("Authorization",localStorage.getItem("auth"));
     xmlHttp.onreadystatechange = async function (){
         console.log("ready state: ", this.status);
@@ -100,5 +99,9 @@ async function displaySearchedMovies(){
 		let movie_html = "Name: " + movie.title + "<br/> Movie Length: " + movie.runtime + "<br/> Plot: " +movie.plot;
 		movieList.innerHTML += movie_html;
 	}
-	movieList.innerHTML += <p/>
+	movieList.innerHTML += "<p/>"
 }
+
+
+
+
