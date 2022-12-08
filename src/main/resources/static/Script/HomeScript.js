@@ -48,6 +48,7 @@ async function displayMovies() {
 }
 
 function getMoviesFromDatabase() {
+
 		let xmlHttp = new XMLHttpRequest();
 		xmlHttp.onreadystatechange = function () {
 			if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {

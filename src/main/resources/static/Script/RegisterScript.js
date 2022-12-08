@@ -44,4 +44,5 @@ function checkIfUserAlreadyExits(username) {
 	}
 	xmlHttp.open("GET", `${backendUrl}/user/${username}`, true);
 	xmlHttp.send();
+
 }
