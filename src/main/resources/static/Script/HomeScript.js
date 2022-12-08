@@ -8,7 +8,6 @@ function voteForMovie() {
 	let xmlHttp = new XMLHttpRequest();
 
 	xmlHttp.open("POST", `${backendUrl}/groups/vote/${groupID}/${movieId}`);
-	xmlHttp.setRequestHeader("Content-Type", "application/json");
 	xmlHttp.setRequestHeader("Authorization", localStorage.getItem("auth"));
 	xmlHttp.onreadystatechange = async function () {
 		console.log("ready state: ", this.status);
@@ -102,4 +101,30 @@ async function displaySearchedMovies(){
 		movieList.innerHTML += movie_html;
 	}
 	movieList.innerHTML += <p/>
+}
+
+function addUserToGroup(){
+	let username = document.getElementById("username").value;
+	let reponse = document.getElementById("response");
+	if(checkIfUserExits(username)!=null){
+		xmlHttp.open("POST", `${backendUrl}/groups/addUser/${checkIfUserExits(username).id}/${groupID}`);
+		xmlHttp.setRequestHeader("Authorization", localStorage.getItem("auth"));
+
+		reponse.innerHTML = "user added";
+	}else{
+		reponse.innerHTML = "user does not exsit";
+	}
+}
+
+function checkIfUserExits(username) {
+	let xmlHttp = new XMLHttpRequest();
+	xmlHttp.onreadystatechange = function () {
+		if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+			let user = JSON.parse(this.responseText);
+			return user;
+		}
+	}
+	xmlHttp.open("GET", `${backendUrl}/user/${username}`, true);
+	xmlHttp.send();
+	return null;
 }
