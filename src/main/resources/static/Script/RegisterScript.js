@@ -1,6 +1,6 @@
 const backendUrl = "http://20.172.234.66:8081";
 
-function createUser() {
+async function createUser() {
 	const username = document.getElementById("username").value;
 	const contactInfo = document.getElementById("contact_info").value;
 	const contactInfoType = document.getElementById("contact_info_type").value;
@@ -15,7 +15,7 @@ function createUser() {
 		"contactInfo": contactInfo,
 		"contactInfoType": contactInfoType
 	};
-	let bool = checkIfUserAlreadyExits(username);
+	let bool = await checkIfUserAlreadyExits(username);
 	if (bool === true) {
 		document.getElementById("response").innerHTML = "This username is already in use";
 	}
@@ -33,7 +33,7 @@ function createUser() {
 }
 
 //returns true if user exists returns false if user does not exist
-function checkIfUserAlreadyExits(username) {
+async function checkIfUserAlreadyExits(username) {
 	console.log("find");
 	let xmlHttp = new XMLHttpRequest();
 	xmlHttp.onreadystatechange = function () {
